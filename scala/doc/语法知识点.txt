@@ -63,3 +63,17 @@
 
 14、别名 type new = old  ， 用new来代替old
 
+15、override 重写父类的方法或者字段 override def toString =
+    super 调用父类的方法 super.toString
+    isInstanceOf[Employee] 是否属于Employee类及其子类，如果不是会抛出异常
+    classOf[Employee] 是否只属于Employee类，而非子类。 if(b.getClass == classOf[B]) "yes" else "no"
+    protected 可以被任何子类访问，如果想要被包访问，protected[包名] def description = 
+    protected[this] val value =  表示只能被当前对象访问，子类不能访问
+    private[this] val value =  表示不能被当前对象访问 .value 不被允许
+    calss Manager extends Employee(name, age)调用父类Employee的构造函数，入参为name和age
+    
+    
+    
+    
+    
+    
