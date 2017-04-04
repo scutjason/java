@@ -71,6 +71,33 @@
     protected[this] val value =  表示只能被当前对象访问，子类不能访问
     private[this] val value =  表示不能被当前对象访问 .value 不被允许
     calss Manager extends Employee(name, age)调用父类Employee的构造函数，入参为name和age
+    val字段在子类中只能用val 来重写 class Strudent(override val id: Int) extends Person
+    def字段不带参数的话可以用val重写，或者用def重写
+    var字段只能重写抽象类的var，其他都不行
+    匿名子类，通过包含带有定义或者重写的代码块的方式来创建一个匿名子类  val alien = new Person("Fred") { def greeting = "Hi I'm Fred"}
+    abstract 抽象类 abstract class Person(val name: String) { def id: Int} 并没有说明id怎么计算
+    getter 方法，val字段。因为你只能取值，不能赋值
+    setter 方法，var字段。因为你既能取值，还能赋值
+    final 定义为final的字段，不能被重写 final val name: String = ，定义为final的类不能被extends
+    with 提前定义父类的构造器执行之前初始化子类的val 字段。 class Ant extends { override val range: Int = 2}with Creature
+    
+16、读取文件Scala.io.Source 
+    val file = source.fromFile("/usr/file.txt", "UTF-8")
+    lines = file.getLines 按行读取文件，返回一个迭代器 for (line <- lines)
+    lines.toArray 直接转出字符串数组
+    for (c <- file) 单个字符读取
+    file.mkString 把文件读取成字符串
+    file.mkString.split("\n") 换行读取，跟lines.toArray效果一样
+    读二进制文件  val file = new File(filename)
+    		val in = new FileInputStream(file)
+		val bytes = new Array[BYTE](file.length.toInt)
+		in.read(bytes)
+		in.close()
+    写文件 val out = new PrintWriter("numbers.txt")
+    	  for (i <- 1 to 100) out.println(i)
+	  out.close()
+    
+    shell impro
     
     
     
